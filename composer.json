@@ -23,10 +23,10 @@
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
         "friends-of-behat/variadic-extension": "^1.1",
-        "lakion/mink-debug-extension": "^1.2.3",
+        "lakion/mink-debug-extension": "^2.0.0",
         "phpspec/phpspec": "^7.0",
-        "phpstan/phpstan-shim": "^0.11",
-        "phpunit/phpunit": "^7.0",
+        "phpstan/phpstan": "0.12.88",
+        "phpunit/phpunit": "^9.5",
         "sylius-labs/coding-standard": "^3.0",
         "symfony/browser-kit": "^3.4|^4.1",
         "symfony/debug-bundle": "^3.4|^4.1",
@@ -52,6 +52,13 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.1-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "symfony/thanks": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
