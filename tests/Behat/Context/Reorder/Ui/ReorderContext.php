@@ -6,7 +6,7 @@ namespace Tests\Sylius\CustomerReorderPlugin\Behat\Context\Reorder\Ui;
 
 use Behat\Behat\Context\Context;
 use Behat\Mink\Session;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Sylius\Behat\Page\Shop\Checkout\AddressPageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;

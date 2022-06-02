@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Sylius\CustomerReorderPlugin\Behat\Context\Reorder\Application;
 
 use Behat\Behat\Context\Context;
-use Nette\InvalidStateException;
+use InvalidArgumentException;
 use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\CustomerRepositoryInterface;
@@ -46,7 +46,7 @@ final class ReorderContext implements Context
 
         try {
             $this->reorderer->reorder($order, $order->getChannel(), $customer);
-        } catch (InvalidStateException $exception) {
+        } catch (InvalidArgumentException $exception) {
             return;
         }
 
