@@ -61,9 +61,8 @@ final class Reorderer implements ReordererInterface
         }
 
         $reorder = $this->orderFactory->createFromExistingOrder($order, $channel);
-        assert($reorder instanceof OrderInterface);
 
-        if (empty($reorder->getItems()->getValues())) {
+        if (0 === count($reorder->getItems()->getValues())) {
             throw new InvalidArgumentException('sylius.reorder.none_of_items_is_available');
         }
 

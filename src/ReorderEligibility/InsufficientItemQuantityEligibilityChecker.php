@@ -36,18 +36,17 @@ final class InsufficientItemQuantityEligibilityChecker implements ReorderEligibi
 
         $insufficientItems = [];
 
-        /** @var OrderItemInterface $item */
         foreach (array_keys($orderProductNamesToQuantity) as $productName) {
             if (!array_key_exists($productName, $reorderProductNamesToQuantity)) {
                 continue;
             }
 
             if ($orderProductNamesToQuantity[$productName] > $reorderProductNamesToQuantity[$productName]) {
-                array_push($insufficientItems, $productName);
+                $insufficientItems[] = $productName;
             }
         }
 
-        if (empty($insufficientItems)) {
+        if (0 === count($insufficientItems)) {
             return [];
         }
 

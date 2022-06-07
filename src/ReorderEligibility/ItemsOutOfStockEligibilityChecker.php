@@ -43,7 +43,7 @@ final class ItemsOutOfStockEligibilityChecker implements ReorderEligibilityCheck
             }
         }
 
-        if (empty($productsOutOfStock)) {
+        if (0 === count($productsOutOfStock)) {
             return [];
         }
 
