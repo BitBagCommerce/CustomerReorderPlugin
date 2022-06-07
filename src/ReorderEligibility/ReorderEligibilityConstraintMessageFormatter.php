@@ -10,7 +10,7 @@ final class ReorderEligibilityConstraintMessageFormatter implements ReorderEligi
     {
         $message = '';
 
-        if (count($messageParameters) === 1) {
+        if (1 === count($messageParameters)) {
             $message = array_pop($messageParameters);
 
             return $message;
