@@ -87,8 +87,6 @@ final class CustomerReorderAction
             return new RedirectResponse($this->urlGenerator->generate('sylius_shop_account_order_index'));
         }
 
-        assert($reorder instanceof OrderInterface);
-
         $this->cartSessionStorage->setForChannel($channel, $reorder);
 
         return new RedirectResponse($this->urlGenerator->generate('sylius_shop_cart_summary'));
