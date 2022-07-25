@@ -26,7 +26,7 @@ use Sylius\CustomerReorderPlugin\ReorderEligibility\ResponseProcessing\ReorderEl
 
 final class ReordererSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         OrderProcessorInterface $orderProcessor,
@@ -44,17 +44,17 @@ final class ReordererSpec extends ObjectBehavior
         );
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldBeAnInstanceOf(Reorderer::class);
     }
 
-    function it_implements_reorderer_interface(): void
+    public function it_implements_reorderer_interface(): void
     {
         $this->shouldImplement(ReordererInterface::class);
     }
 
-    function it_creates_and_persists_reorder_from_existing_order(
+    public function it_creates_and_persists_reorder_from_existing_order(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         ReorderEligibilityChecker $reorderEligibilityChecker,
@@ -87,7 +87,7 @@ final class ReordererSpec extends ObjectBehavior
         $this->reorder($order, $channel, $customer);
     }
 
-    function it_checks_if_orders_totals_differ(
+    public function it_checks_if_orders_totals_differ(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         ReorderEligibilityChecker $reorderEligibilityChecker,
@@ -129,7 +129,7 @@ final class ReordererSpec extends ObjectBehavior
         $this->reorder($order, $channel, $customer);
     }
 
-    function it_checks_if_promotion_is_no_longer_available(
+    public function it_checks_if_promotion_is_no_longer_available(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         ReorderEligibilityChecker $reorderEligibilityChecker,
@@ -177,7 +177,7 @@ final class ReordererSpec extends ObjectBehavior
         $this->reorder($order, $channel, $customer);
     }
 
-    function it_checks_if_price_of_any_item_has_changed(
+    public function it_checks_if_price_of_any_item_has_changed(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         ReorderEligibilityChecker $reorderEligibilityChecker,
@@ -225,7 +225,7 @@ final class ReordererSpec extends ObjectBehavior
         $this->reorder($order, $channel, $customer);
     }
 
-    function it_checks_if_any_item_is_out_of_stock(
+    public function it_checks_if_any_item_is_out_of_stock(
         OrderFactoryInterface $orderFactory,
         EntityManagerInterface $entityManager,
         ReorderEligibilityChecker $reorderEligibilityChecker,
@@ -277,7 +277,7 @@ final class ReordererSpec extends ObjectBehavior
         $this->reorder($order, $channel, $customer);
     }
 
-    function it_does_not_create_reorder_when_order_does_not_belong_to_given_customer(
+    public function it_does_not_create_reorder_when_order_does_not_belong_to_given_customer(
         OrderInterface $order,
         ChannelInterface $channel,
         CustomerInterface $firstCustomer,

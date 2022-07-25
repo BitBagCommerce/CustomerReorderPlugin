@@ -50,7 +50,7 @@ final class ReorderContext implements Context
             return;
         }
 
-        throw new \Exception("Reorder should fail");
+        throw new \Exception('Reorder should fail');
     }
 
     /**

@@ -18,7 +18,7 @@ use Sylius\CustomerReorderPlugin\ReorderProcessing\ReorderProcessor;
 
 final class ReorderItemsProcessorSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         OrderItemQuantityModifierInterface $orderItemQuantityModifier,
         OrderModifierInterface $orderModifier,
         AvailabilityCheckerInterface $availabilityChecker,
@@ -27,17 +27,17 @@ final class ReorderItemsProcessorSpec extends ObjectBehavior
         $this->beConstructedWith($orderItemQuantityModifier, $orderModifier, $availabilityChecker, $orderItemFactory);
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(ReorderItemsProcessor::class);
     }
 
-    function it_implements_reorder_processor_interface(): void
+    public function it_implements_reorder_processor_interface(): void
     {
         $this->shouldImplement(ReorderProcessor::class);
     }
 
-    function it_copies_order_items_to_reorder(
+    public function it_copies_order_items_to_reorder(
         OrderItemQuantityModifierInterface $orderItemQuantityModifier,
         OrderModifierInterface $orderModifier,
         AvailabilityCheckerInterface $availabilityChecker,

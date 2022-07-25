@@ -104,9 +104,11 @@ final class ReorderContext implements Context
      */
     public function iShouldBeNotifiedThatProductIsOutOfStock(string ...$products): void
     {
-        $this->summaryPage->doesFlashMessageWithTextExists(sprintf(
-            'Following items: %s are out of stock, which have affected order total.',
-            $this->reorderEligibilityConstraintMessageFormatter->format($products))
+        $this->summaryPage->doesFlashMessageWithTextExists(
+            sprintf(
+                'Following items: %s are out of stock, which have affected order total.',
+                $this->reorderEligibilityConstraintMessageFormatter->format($products)
+            )
         );
     }
 
@@ -128,9 +130,11 @@ final class ReorderContext implements Context
      */
     public function iShouldBeNotifiedThatOrderItemsPriceHasChanged(string $orderItemName): void
     {
-        $this->summaryPage->doesFlashMessageWithTextExists(sprintf(
-            'Prices of products: %s have changed, which have affected order total.',
-            $orderItemName)
+        $this->summaryPage->doesFlashMessageWithTextExists(
+            sprintf(
+                'Prices of products: %s have changed, which have affected order total.',
+                $orderItemName
+            )
         );
     }
 
@@ -147,9 +151,11 @@ final class ReorderContext implements Context
      */
     public function iShouldBeNotifiedThatPromotionIsNoLongerEnabled(string $promotionName): void
     {
-        $this->summaryPage->doesFlashMessageWithTextExists(sprintf(
-            'Following promotions: %s are no longer enabled, which have affected order total.',
-            $promotionName)
+        $this->summaryPage->doesFlashMessageWithTextExists(
+            sprintf(
+                'Following promotions: %s are no longer enabled, which have affected order total.',
+                $promotionName
+            )
         );
     }
 
