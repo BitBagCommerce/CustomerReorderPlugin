@@ -18,24 +18,24 @@ use Sylius\CustomerReorderPlugin\ReorderEligibility\ResponseProcessing\Eligibili
 
 final class ItemsOutOfStockEligibilityCheckerSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ReorderEligibilityConstraintMessageFormatterInterface $reorderEligibilityConstraintMessageFormatter,
         AvailabilityCheckerInterface $availabilityChecker
     ): void {
         $this->beConstructedWith($reorderEligibilityConstraintMessageFormatter, $availabilityChecker);
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldBeAnInstanceOf(ItemsOutOfStockEligibilityChecker::class);
     }
 
-    function it_implements_reorder_eligibility_checker_interface(): void
+    public function it_implements_reorder_eligibility_checker_interface(): void
     {
         $this->shouldImplement(ReorderEligibilityChecker::class);
     }
 
-    function it_returns_positive_result_when_all_reorder_items_are_on_hand(
+    public function it_returns_positive_result_when_all_reorder_items_are_on_hand(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $firstOrderItem,
@@ -59,7 +59,7 @@ final class ItemsOutOfStockEligibilityCheckerSpec extends ObjectBehavior
         $response->shouldBeEqualTo([]);
     }
 
-    function it_returns_violation_message_when_some_reorder_items_are_out_of_stock(
+    public function it_returns_violation_message_when_some_reorder_items_are_out_of_stock(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $firstOrderItem,

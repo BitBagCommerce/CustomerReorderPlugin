@@ -16,23 +16,23 @@ use Sylius\CustomerReorderPlugin\ReorderEligibility\ResponseProcessing\Eligibili
 
 final class InsufficientItemQuantityEligibilityCheckerSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ReorderEligibilityConstraintMessageFormatterInterface $reorderEligibilityConstraintMessageFormatter
     ): void {
         $this->beConstructedWith($reorderEligibilityConstraintMessageFormatter);
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldBeAnInstanceOf(InsufficientItemQuantityEligibilityChecker::class);
     }
 
-    function it_implements_reorder_eligibility_checker(): void
+    public function it_implements_reorder_eligibility_checker(): void
     {
         $this->shouldImplement(ReorderEligibilityChecker::class);
     }
 
-    function it_returns_positive_result_when_prices_are_the_same(
+    public function it_returns_positive_result_when_prices_are_the_same(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $firstOrderItem,
@@ -58,7 +58,7 @@ final class InsufficientItemQuantityEligibilityCheckerSpec extends ObjectBehavio
         $response->shouldBeEqualTo([]);
     }
 
-    function it_returns_empty_array_when_reorder_has_no_items(
+    public function it_returns_empty_array_when_reorder_has_no_items(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $firstOrderItem,
@@ -81,7 +81,7 @@ final class InsufficientItemQuantityEligibilityCheckerSpec extends ObjectBehavio
         $response->shouldBeEqualTo([]);
     }
 
-    function it_returns_flash_message_when_reorder_items_quantity_differ(
+    public function it_returns_flash_message_when_reorder_items_quantity_differ(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $firstOrderItem,

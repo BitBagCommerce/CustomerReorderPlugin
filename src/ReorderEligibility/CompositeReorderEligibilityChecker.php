@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Sylius\CustomerReorderPlugin\ReorderEligibility;
 
-use Sylius\Component\Core\Model\OrderInterface;
 use Laminas\Stdlib\PriorityQueue;
+use Sylius\Component\Core\Model\OrderInterface;
 
 final class CompositeReorderEligibilityChecker implements ReorderEligibilityChecker
 {
@@ -23,7 +23,7 @@ final class CompositeReorderEligibilityChecker implements ReorderEligibilityChec
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {
@@ -31,7 +31,8 @@ final class CompositeReorderEligibilityChecker implements ReorderEligibilityChec
 
         foreach ($this->eligibilityCheckers as $eligibilityChecker) {
             $eligibilityCheckersFailures = array_merge(
-                $eligibilityCheckersFailures, $eligibilityChecker->check($order, $reorder)
+                $eligibilityCheckersFailures,
+                $eligibilityChecker->check($order, $reorder)
             );
         }
 

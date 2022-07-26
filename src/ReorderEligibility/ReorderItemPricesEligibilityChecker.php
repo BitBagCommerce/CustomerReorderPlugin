@@ -46,7 +46,7 @@ final class ReorderItemPricesEligibilityChecker implements ReorderEligibilityChe
             }
         }
 
-        if (empty($orderItemsWithChangedPrice)) {
+        if (0 === count($orderItemsWithChangedPrice)) {
             return [];
         }
 

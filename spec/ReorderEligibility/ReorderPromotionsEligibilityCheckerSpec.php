@@ -17,23 +17,23 @@ use Sylius\CustomerReorderPlugin\ReorderEligibility\ResponseProcessing\Eligibili
 
 final class ReorderPromotionsEligibilityCheckerSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ReorderEligibilityConstraintMessageFormatterInterface $reorderEligibilityConstraintMessageFormatter
     ): void {
         $this->beConstructedWith($reorderEligibilityConstraintMessageFormatter);
     }
 
-    function it_is_initializable(): void
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(ReorderPromotionsEligibilityChecker::class);
     }
 
-    function it_implements_reorder_eligibility_checker_interface(): void
+    public function it_implements_reorder_eligibility_checker_interface(): void
     {
         $this->shouldImplement(ReorderEligibilityChecker::class);
     }
 
-    function it_returns_positive_result_when_there_are_no_reorder_items(
+    public function it_returns_positive_result_when_there_are_no_reorder_items(
         OrderInterface $order,
         OrderInterface $reorder
     ): void {
@@ -43,7 +43,7 @@ final class ReorderPromotionsEligibilityCheckerSpec extends ObjectBehavior
         $response->shouldBeEqualTo([]);
     }
 
-    function it_returns_positive_result_when_the_same_promotions_are_applied(
+    public function it_returns_positive_result_when_the_same_promotions_are_applied(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $reorderItem,
@@ -68,7 +68,7 @@ final class ReorderPromotionsEligibilityCheckerSpec extends ObjectBehavior
         $response->shouldBeEqualTo([]);
     }
 
-    function it_returns_violation_message_when_some_promotions_are_not_applied(
+    public function it_returns_violation_message_when_some_promotions_are_not_applied(
         OrderInterface $order,
         OrderInterface $reorder,
         OrderItemInterface $reorderItem,

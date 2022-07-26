@@ -10,6 +10,7 @@ use Sylius\Component\Inventory\Checker\AvailabilityCheckerInterface;
 use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
 use Sylius\Component\Order\Modifier\OrderModifierInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
+use Webmozart\Assert\Assert;
 
 final class ReorderItemsProcessor implements ReorderProcessor
 {
@@ -51,8 +52,14 @@ final class ReorderItemsProcessor implements ReorderProcessor
 
             $reorderItemQuantity = 0;
 
+            $stockOnHand = $orderItem->getVariant()->getOnHand();
+            Assert::notNull($stockOnHand);
+
+            $stockOnHold = $orderItem->getVariant()->getOnHold();
+            Assert::notNull($stockOnHold);
+
             if (!$this->availabilityChecker->isStockSufficient($orderItem->getVariant(), $orderItem->getQuantity())) {
-                $reorderItemQuantity = $orderItem->getVariant()->getOnHand() - $orderItem->getVariant()->getOnHold();
+                $reorderItemQuantity = $stockOnHand - $stockOnHold;
             } else {
                 $reorderItemQuantity = $orderItem->getQuantity();
             }
