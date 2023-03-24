@@ -8,5 +8,8 @@ use Sylius\Component\Core\Model\OrderInterface;
 
 interface ReorderEligibilityChecker
 {
+    /**
+     * @return ReorderEligibilityCheckerResponse[]
+     */
     public function check(OrderInterface $order, OrderInterface $reorder): array;
 }

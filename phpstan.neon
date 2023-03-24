@@ -1,5 +1,6 @@
 parameters:
-    excludes_analyse:
+    checkGenericClassInNonGenericObjectType: false
+    excludePaths:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
 

@@ -19,6 +19,9 @@ final class ReorderItemPricesEligibilityChecker implements ReorderEligibilityChe
         $this->reorderEligibilityConstraintMessageFormatter = $reorderEligibilityConstraintMessageFormatter;
     }
 
+    /**
+     * @return ReorderEligibilityCheckerResponse[]
+     */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {
         $orderProductNamesToTotal = [];

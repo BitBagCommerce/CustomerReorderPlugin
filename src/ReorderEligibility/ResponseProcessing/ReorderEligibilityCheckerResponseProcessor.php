@@ -17,9 +17,11 @@ final class ReorderEligibilityCheckerResponseProcessor implements ReorderEligibi
         $this->session = $session;
     }
 
+    /**
+     * @param ReorderEligibilityCheckerResponse[] $responses
+     */
     public function process(array $responses): void
     {
-        /** @var ReorderEligibilityCheckerResponse $response */
         foreach ($responses as $response) {
             $this->session->getFlashBag()->add('info', [
                 'message' => $response->getMessage(),

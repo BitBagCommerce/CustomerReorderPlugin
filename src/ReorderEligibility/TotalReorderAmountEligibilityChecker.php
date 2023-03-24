@@ -18,6 +18,9 @@ final class TotalReorderAmountEligibilityChecker implements ReorderEligibilityCh
         $this->moneyFormatter = $moneyFormatter;
     }
 
+    /**
+     * @return ReorderEligibilityCheckerResponse[]
+     */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {
         if ($order->getTotal() === $reorder->getTotal()) {

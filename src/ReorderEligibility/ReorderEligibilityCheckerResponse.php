@@ -9,7 +9,7 @@ class ReorderEligibilityCheckerResponse
     /** @var string */
     private $message;
 
-    /** @var array */
+    /** @var array<string, string> */
     private $parameters;
 
     public function getMessage(): string
@@ -22,11 +22,17 @@ class ReorderEligibilityCheckerResponse
         $this->message = $message;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function getParameters(): array
     {
         return $this->parameters;
     }
 
+    /**
+     * @param array<string, string> $parameters
+     */
     public function setParameters(array $parameters): void
     {
         $this->parameters = $parameters;
