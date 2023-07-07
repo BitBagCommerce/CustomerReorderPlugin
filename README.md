@@ -11,6 +11,16 @@
 
 <p align="center"><a href="https://sylius.com/plugins/" target="_blank"><img src="https://sylius.com/assets/badge-official-sylius-plugin.png" width="200"></a></p>
 
+<p>
+    <a href="https://github.com/BitBagCommerce/CustomerReorderPlugin/actions">
+        <img src="https://img.shields.io/github/actions/workflow/status/BitBagCommerce/CustomerReorderPlugin/build.yml?branch=master" alt="Build"></a>
+    <a href="https://join.slack.com/t/openmarketplacegroup/shared_invite/zt-1ks2kfsqe-w_J2uqgTMNEAYQS0xa8Q8Q">
+        <img src="https://img.shields.io/badge/chat-on%20slack-e51670.svg" alt="Chat"></a>
+    <a href="https://bitbag.io/contact-us">
+        <img src="https://img.shields.io/badge/support-contact%20author-blue" alt="Contact"></a>
+</p>
+
+
 <p align="center">This plugin allows customers to reorder a previously placed order.</p>
 
 ![Screenshot showing the customer's orders page with reorder buttons](docs/screenshot.png)
