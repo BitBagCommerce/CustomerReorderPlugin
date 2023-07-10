@@ -23,7 +23,7 @@ final class CompositeReorderEligibilityChecker implements ReorderEligibilityChec
     }
 
     /**
-     * @inheritdoc
+     * @return ReorderEligibilityCheckerResponse[]
      */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {

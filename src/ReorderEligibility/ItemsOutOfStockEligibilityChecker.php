@@ -26,6 +26,9 @@ final class ItemsOutOfStockEligibilityChecker implements ReorderEligibilityCheck
         $this->availabilityChecker = $availabilityChecker;
     }
 
+    /**
+     * @return ReorderEligibilityCheckerResponse[]
+     */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {
         $productsOutOfStock = [];

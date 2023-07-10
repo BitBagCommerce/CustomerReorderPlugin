@@ -19,6 +19,9 @@ final class InsufficientItemQuantityEligibilityChecker implements ReorderEligibi
         $this->reorderEligibilityConstraintMessageFormatter = $reorderEligibilityConstraintMessageFormatter;
     }
 
+    /**
+     * @return ReorderEligibilityCheckerResponse[]
+     */
     public function check(OrderInterface $order, OrderInterface $reorder): array
     {
         $orderProductNamesToQuantity = [];

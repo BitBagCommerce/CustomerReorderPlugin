@@ -12,7 +12,6 @@ use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Repository\OrderRepositoryInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
-use Sylius\Component\Order\Context\CartContextInterface;
 use Sylius\CustomerReorderPlugin\Reorder\ReordererInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,9 +26,6 @@ final class CustomerReorderAction
 
     /** @var ChannelContextInterface */
     private $channelContext;
-
-    /** @var CartContextInterface */
-    private $cartContext;
 
     /** @var CustomerContextInterface */
     private $customerContext;
@@ -49,7 +45,6 @@ final class CustomerReorderAction
     public function __construct(
         CartSessionStorage $cartSessionStorage,
         ChannelContextInterface $channelContext,
-        CartContextInterface $cartContext,
         CustomerContextInterface $customerContext,
         OrderRepositoryInterface $orderRepository,
         ReordererInterface $reorderService,
@@ -58,7 +53,6 @@ final class CustomerReorderAction
     ) {
         $this->cartSessionStorage = $cartSessionStorage;
         $this->channelContext = $channelContext;
-        $this->cartContext = $cartContext;
         $this->customerContext = $customerContext;
         $this->orderRepository = $orderRepository;
         $this->reorderer = $reorderService;
