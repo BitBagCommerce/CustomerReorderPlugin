@@ -3,7 +3,7 @@
 1. Require plugin with composer:
 
     ```bash
-    composer require sylius/customer-reorder-plugin
+    composer require bitbag/sylius-customer-reorder-plugin
     ```
 
 2. Import configuration to `app/config/config.yml`:
@@ -20,11 +20,11 @@
         resource: "@SyliusCustomerReorderPlugin/Resources/config/app/reorder_routing.yml"
     ```
 
-4. Add plugin class to your `AppKernel`:
+4. Add plugin dependencies to your `config/bundles.php` file:
 
     ```php
-    $bundles = [
-        new \Sylius\CustomerReorderPlugin\SyliusCustomerReorderPlugin(),
+    return  [
+          Sylius\CustomerReorderPlugin\SyliusCustomerReorderPlugin::class  => ['all' => true],
     ];
     ```
 

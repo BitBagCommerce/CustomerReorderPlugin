@@ -43,7 +43,7 @@ Symfony Flex, it's much quicker! :)
 To install plugin, just require it with composer:
 
 ```bash
-composer require sylius/customer-reorder-plugin
+composer require bitbag/sylius-customer-reorder-plugin
 ```
 
 > Remember to allow community recipes with `composer config extra.symfony.allow-contrib true` or during plugin installation process
