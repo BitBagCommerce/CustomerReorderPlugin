@@ -46,6 +46,9 @@
         "vimeo/psalm": "4.7.1",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
+    "conflict": {
+        "doctrine/orm": ">=2.15.2"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
